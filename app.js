@@ -2,6 +2,8 @@ const dotenv = require('dotenv');
 dotenv.config({
     path: 'config/dev.env'
 })
+const port = process.env.PORT || 3000;
+
 const express = require('express');
 const path = require('path');
 require('./utils/database');
@@ -22,7 +24,6 @@ app.use('/teams', teamRouter);
 app.use('/user_team', userTeamRouter);
 
 
-const port = process.env.PORT || 3000;
 
 
 app.get('*', (req, res) => {
