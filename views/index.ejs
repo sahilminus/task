@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('./header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron jumbotron-fluid">
+            <!-- <h1>See All User Data</h1>
+            <p>Welcome to templating using EJS</p> -->
+            <div class="container">
+                <h1 class="display-4">IncubateIND Task</h1>
+                <hr class="my-4">
+                <p class="lead">
+                    <a class="nav-link" href="/users" role="button">view users</a>
+                </p>
+                <p class="lead">
+                    <a class="nav-link" href="/teams" role="button">view teams</a>
+                </p>
+                <p class="lead">
+                    <a class="nav-link" href="/user_team" role="button">view user teams</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./footer'); %>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<table class="table  table-hover table-striped table-sm text-center">
+    <thead class="thead-dark ">
+        <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Number</th>
+            <th scope="col">City</th>
+            <th scope="col">Url</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% var data=users%>
+        <% for(var i=0; i<data.length; i++) {%>
+        <tr>
+            <td>
+                <%= data[i].full_name%>
+            </td>
+            <td>
+                <%= data[i].email%>
+            </td>
+            <td>
+                <%= data[i].number%>
+            </td>
+            <td>
+                <%= data[i].city%>
+            </td>
+            <td>
+                <%= data[i].url%>
+            </td>
+        </tr>
+        <% } %>
+
+    </tbody>
+</table>

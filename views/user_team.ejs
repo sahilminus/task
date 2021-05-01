@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('./header'); %>
+    </header>
+
+    <main class="text-center">
+        <% var next=page+1%>
+        <% 
+        var prev;
+            if(page==1){
+                prev=1
+            }else{
+                prev=page-1;
+            }
+
+        %>
+        <div class="table-responsive">
+            <table class="table table-hover table-striped table-sm text-center">
+                <thead class="thead-dark ">
+                    <tr>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Url</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<teams.length; i++) {%>
+                    <tr>
+                        <td>
+                            <%= teams[i].full_name%>
+                        </td>
+                        <td>
+                            <%= teams[i].teams[0].team_name%>
+                        </td>
+                        <td>
+                            <%= teams[i].email%>
+                        </td>
+                        <td>
+                            <%= teams[i].city%>
+                        </td>
+                        <td>
+                            <%= teams[i].number%>
+                        </td>
+                        <td>
+                            <%= teams[i].url%>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <a class="btn btn-dark btn-sm" role="button" href=<%="/user_team?page="+ prev%>>Previous</a>
+        <a class="btn btn-dark btn-sm" role="button" href=<%="/user_team?page="+ next%>>Next</a>
+        <hr class="my-4">
+    </main>
+
+    <footer>
+        <%- include('./footer'); %>
+    </footer>
+
+</body>
+
+</html>

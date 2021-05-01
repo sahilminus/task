@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('./header'); %>
+    </header>
+
+    <main class="text-center">
+        <% var next=page+1%>
+        <% 
+        var prev;
+            if(page==1){
+                prev=1
+            }else{
+                prev=page-1;
+            }
+
+        %>
+        <%- include('./table');%>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light text-center"> -->
+
+        <a class="btn btn-dark btn-sm" role="button" href=<%="/users?page="+ prev%>>Previous</a>
+        <a class="btn btn-dark btn-sm" role="button" href=<%="/users?page="+ next%>>Next</a>
+        <hr class="my-4">
+        <!-- </nav> -->
+    </main>
+
+    <footer>
+        <%- include('./footer'); %> </footer>
+</body>
+
+</html>
